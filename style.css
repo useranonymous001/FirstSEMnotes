@@ -1,43 +1,76 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fff4be;
+
+.title{
+
+    font-family: Roboto;
+    text-align: center;
+}
+.subject-container{
+    padding: 1%;
+    background-color: #ffffff10;
+    /* need to adjust later on */
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+    column-gap: 1rem;
+    row-gap: 1rem;
+    font-family: Roboto ;
+    backdrop-filter: blur(12px);
+    box-shadow: 3px 2px 8px 1px rgba(0,0,0,0.6);
+-webkit-box-shadow: 3px 2px 8px 1px rgba(0,0,0,0.6);
+-moz-box-shadow: 3px 2px 8px 1px rgba(0,0,0,0.6);
+}
+.subject{
+    border-radius: 0.2rem;
+    background-color: rgb(225, 225, 225);
+    padding: 10px;
+    vertical-align: middle;
+    transition: 0.2s;
+}
+.subject:hover{
+    box-shadow: 3px 2px 5px 1px rgba(0,0,0,0.6);
+
+}
+h3{
     margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f2e084;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
     text-align: center;
-    color: #333;
+    vertical-align: middle
+    ;
 }
-
-.subject {
-    margin-top: 20px;
+.subject-info{
+    text-align: justify;
+    vertical-align: middle;
+}
+.buttons{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+    column-gap: 10px;
+    vertical-align: middle
+    ;
+
+}
+.download-btn{
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: rgb(34, 199, 254);
+    border: none;
+    border-radius: 0.2rem;
+    transition: 0.5s;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.view-btn{
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: rgb(181, 176, 176);
+    border: none;
+    border-radius: 0.2rem;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
-.subject-link {
-    text-decoration: none;
-    color: #fff;
-    padding: 8px;
-    border-radius: 5px;
-    text-align: center;
-    background-color: #877d49;
-    font-size: 14px;
-    margin-bottom: 10px;
-    /* Add margin-bottom to create space between links */
-    transition: background-color 0.3s ease;
+.download-btn:hover{
+    opacity: 0.7;
 }
-
-.subject-link:hover {
-    background-color: #6c6140;
+.view-btn:hover{
+    opacity: 0.7;
 }

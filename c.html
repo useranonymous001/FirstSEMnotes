@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Files from GitHub</title>
+  </head>
+    <style>
+        div {
+          color: black;
+          background-color: antiquewhite;
+        }
+      </style>
+  <body>
+    <!-- Container for download links -->
+    <div id="downloadLinks">
+        <div id="downloadLinks">
+            <h1>Contents</h1>
+    </div>
+    <br>
+    <div>
+        <a href="index.html">Go to Home</a>
+      </div>
+
+    <script>
+      // Define an array of file paths hosted on GitHub
+      const githubFiles = [
+        "https://raw.githubusercontent.com/useranonymous001/notes/main/HtmlCleansheet.pdf",
+        "https://raw.githubusercontent.com/useranonymous001/notes/main/advanceinputs.jpg",
+        "https://raw.githubusercontent.com/useranonymous001/notes/main/generalinput.jpg",
+      ];
+
+      // Function to generate download links
+      function generateDownloadLinks() {
+        const downloadLinksContainer = document.getElementById("downloadLinks");
+
+        // Iterate over each file URL
+        githubFiles.forEach((fileUrl) => {
+          // Create a link element for each file
+          const link = document.createElement("a");
+          link.href = fileUrl;
+          link.textContent = getFileDisplayName(fileUrl); // Display the file name as the link text
+          link.download = ""; // Add the 'download' attribute to trigger download
+
+          // Append the link to the container
+          downloadLinksContainer.appendChild(link);
+          downloadLinksContainer.appendChild(document.createElement("br")); // Add a line break for better readability
+        });
+      }
+
+      // Function to get the display name of the file from its URL
+      function getFileDisplayName(fileUrl) {
+        // Extract the file name from the URL
+        const parts = fileUrl.split("/");
+        return decodeURIComponent(parts[parts.length - 1]);
+      }
+
+      // Call the function to generate download links
+      generateDownloadLinks();
+    </script>
+  </body>
+</html>
